@@ -9,9 +9,9 @@
 #$ -pe smp 20
 #$ -V
 #export TF_CPP_MIN_LOG_LEVEL=2
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda-8.0/lib64:/usr/local/cuda-8.0/extras/CUPTI/lib64"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda-8.0/lib64:/usr/local/cuda-8.0/extras/CUPTI/lib64:/home/jrafatiheravi/.conda/envs/jacobenv"
 export CUDA_HOME="/usr/local/cuda-8.0"
-export PATH=":$PATH:/usr/local/cuda-8.0/bin"
+export PATH=":$PATH:/usr/local/cuda-8.0/bin:/home/jrafatiheravi/.conda/envs/jacobenv:$CUDA_HOME:$LD_LIBRARY_PATH"
 
 module load anaconda3
 source activate jacobenv
