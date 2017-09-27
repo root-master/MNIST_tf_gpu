@@ -1,0 +1,17 @@
+#! /bin/bash
+#$ -S /bin/bash
+#$ -q gpu.q
+#$ -cwd
+#$ -N myjob
+#$ -j y
+#$ -o test1.qlog
+#$ -l mem_free=32G
+#$ -pe smp 20
+#$ -V
+export TF_CPP_MIN_LOG_LEVEL=2
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64"
+export CUDA_HOME=/usr/local/cuday
+
+module load anaconda3
+source activate jacobenv
+python MNIST_expert_tf_gpu.py
